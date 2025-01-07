@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/styles/Denuncia.css";
 
 function Denuncia() {
+  
   return (
     <div className="app-container">
       <main className="main-c  ontent">
