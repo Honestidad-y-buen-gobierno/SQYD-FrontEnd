@@ -5,22 +5,19 @@ function Denuncia() {
   return (
     <div className="app-container">
       <main className="main-c  ontent">
-        <section className="denuncia-section">
-          <h3 className="denuncia-title">
-            Formulario para reportar conductas indebidas de funcionarios públicos
-            o de particulares relacionados con actividades del gobierno.
-          </h3>
-          <p className="denuncia-description">
-            Tu participación es clave para construir un gobierno más
-            transparente y honesto.
-          </p>
-          
-        <button
-          className="denuncia-button"
-          aria-label="Iniciar formulario de denuncia"
-        >
-          Iniciar Denuncia
-        </button>
+      <section className="denuncia-section">
+          <div className="denuncia-section-content">
+            <h3 className="denuncia-title">
+              Formulario para reportar conductas indebidas de funcionarios públicos
+              o de particulares relacionados con actividades del gobierno.
+            </h3>
+            <p className="denuncia-description">
+              Tu participación es clave para construir un gobierno más transparente y honesto.
+            </p>
+            <div className="denuncia-button-container">
+              <button className="denuncia-button">Iniciar Denuncia</button>
+            </div>
+          </div>
         </section>
 
 
