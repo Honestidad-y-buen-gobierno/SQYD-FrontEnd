@@ -18,8 +18,8 @@
     width: 100%;
     height: 120px;
     background-image: url('../assets/images/pattern.png');
-    background-repeat: repeat; 
-    background-position: top left; 
+    background-repeat: repeat;
+    background-position: top left;
     z-index: 1;
   }
   
@@ -43,11 +43,12 @@
     top: 120px;
     left: 0;
     width: 100%;
-    height: 30px; 
+    height: 30px; /* Altura predeterminada */
     background-color: #009887;
     z-index: 3;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
   }
   
   .header-navbar nav ul {
@@ -55,7 +56,6 @@
     margin: 0;
     padding: 0 20px;
     display: flex;
-    justify-content: flex-start;
     gap: 20px;
     width: 100%;
   }
@@ -76,24 +76,10 @@
     text-decoration: underline;
   }
   
-  @media (max-width: 768px) {
-    .header-navbar {
-      height: 35px; 
-    }
-  
-    .header-navbar nav ul {
-      padding: 5px 10px;
-      gap: 10px;
-    }
-  
-    .header-navbar nav ul li a {
-      font-size: 14px;
-    }
-  }
-  
+  /* Media query para pantallas pequeñas */
   @media (max-width: 768px) {
     .header {
-      height: 130px;
+      height: auto;
     }
   
     .header-background {
@@ -101,21 +87,42 @@
     }
   
     .header-logo {
-      height: 80px;
+      position: relative;
+      height: 60px;
+      margin-left: 10px;
+    }
+  
+    .header-logo img {
+      height: 100%;
+      width: auto;
     }
   
     .header-navbar {
-      top: 80px;
-      height: 50px;
+      position: relative;
+      top: 0;
+      height: 20px !important; /* Reducida de 30px a 20px con prioridad */
+      background-color: #009887;
+      padding: 0 !important; /* Asegurar que no haya padding adicional */
+      display: flex;
+      justify-content: flex-start;
+      gap: 5px !important;
     }
   
     .header-navbar nav ul {
-      padding: 5px 10px;
-      gap: 10px;
+      flex-direction: row;
+      padding: 0 !important;
+      gap: 5px !important; /* Reducir el espacio entre enlaces */
+    }
+  
+    .header-navbar nav ul li {
+      margin: 0;
+      padding: 0;
     }
   
     .header-navbar nav ul li a {
       font-size: 14px;
+      line-height: 20px !important; /* Alinear texto con la altura */
+      text-align: center;
     }
   }
   
