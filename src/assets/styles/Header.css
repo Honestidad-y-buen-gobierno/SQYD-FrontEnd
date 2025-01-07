@@ -1,0 +1,121 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-image: url('../assets/images/pattern.png');
+    background-repeat: repeat; 
+    background-position: top left; 
+    z-index: 1;
+  }
+  
+  .header-logo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 2;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo img {
+    height: 100%;
+    width: auto;
+  }
+  
+  .header-navbar {
+    position: relative;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 30px; 
+    background-color: #009887;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .header-navbar nav ul li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .header-navbar nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .header-navbar {
+      height: 35px; 
+    }
+  
+    .header-navbar nav ul {
+      padding: 5px 10px;
+      gap: 10px;
+    }
+  
+    .header-navbar nav ul li a {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      height: 130px;
+    }
+  
+    .header-background {
+      height: 100px;
+    }
+  
+    .header-logo {
+      height: 80px;
+    }
+  
+    .header-navbar {
+      top: 80px;
+      height: 50px;
+    }
+  
+    .header-navbar nav ul {
+      padding: 5px 10px;
+      gap: 10px;
+    }
+  
+    .header-navbar nav ul li a {
+      font-size: 14px;
+    }
+  }
+  
