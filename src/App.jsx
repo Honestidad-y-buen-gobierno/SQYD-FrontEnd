@@ -1,14 +1,12 @@
 import React from "react";
 import Header from "./components/Header";
+import Denuncia from "./pages/Denuncia";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main>
-        <h1>Bienvenido a la página principal</h1>
-        <p>opciones.</p>
-      </main>
+      <Denuncia />
     </div>
   );
 }

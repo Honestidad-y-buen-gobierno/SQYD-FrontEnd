@@ -1,28 +1,10 @@
 import React from "react";
-import  "../assets/styles/app.css"; // Asegúrate de tener un archivo CSS para los estilos
+import "../assets/styles/Denuncia.css";
 
-function App() {
+function Denuncia() {
   return (
     <div className="app-container">
-      <header className="header">
-        <img
-          src="/logo.png" // Cambia la ruta por tu logo
-          alt="Secretaría Anticorrupción y Buen Gobierno"
-          className="header-logo"
-        />
-        <h1 className="header-title">
-          Secretaría Anticorrupción y Buen Gobierno
-        </h1>
-        <h2 className="header-subtitle">Gobierno de Chiapas 2024 - 2030</h2>
-      </header>
-
-      <nav className="nav-bar">
-        <button className="nav-button">Inicio</button>
-        <button className="nav-button">Denuncia</button>
-        <button className="nav-button">Seguimiento de Denuncia</button>
-      </nav>
-
-      <main className="main-content">
+      <main className="main-c  ontent">
         <section className="denuncia-section">
           <h3 className="denuncia-title">
             Formulario para reportar conductas indebidas de funcionarios públicos
@@ -32,12 +14,21 @@ function App() {
             Tu participación es clave para construir un gobierno más
             transparente y honesto.
           </p>
-          <button className="denuncia-button">Iniciar Denuncia</button>
+          
+        <button
+          className="denuncia-button"
+          aria-label="Iniciar formulario de denuncia"
+        >
+          Iniciar Denuncia
+        </button>
         </section>
+
 
         <section className="info-section">
           <div className="info-card">
-            <h4 className="info-title">Qué <span className="highlight">sí</span> denunciar aquí</h4>
+            <h4 className="info-title">
+              Qué <span className="highlight-yes">sí</span> denunciar aquí
+            </h4>
             <ul>
               <li>Faltas administrativas de funcionarios públicos federales.</li>
               <li>
@@ -54,7 +45,9 @@ function App() {
           </div>
 
           <div className="info-card">
-            <h4 className="info-title">Qué <span className="highlight">no</span> denunciar aquí</h4>
+            <h4 className="info-title">
+              Qué <span className="highlight">no</span> denunciar aquí
+            </h4>
             <ul>
               <li>Trámites y/o servicios.</li>
               <li>Asuntos laborales.</li>
@@ -72,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default Denuncia;
