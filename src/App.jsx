@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Agregar soporte para rutas
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import Header from "./components/Header";
 import Denuncia from "./pages/Denuncia";
-import Topic from "./components/Topic"; // Asegúrate de que este componente exista
-
+import Topic from "./pages/Topic"; 
 function App() {
   return (
     <Router>

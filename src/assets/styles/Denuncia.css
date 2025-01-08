@@ -29,7 +29,7 @@ button {
 }
 
 .main-content {
-  padding-top: 150px; /* Ajuste dinámico igual a la altura del header */
+  padding-top: 20px; /* Ajuste dinámico igual a la altura del header */
 }
 
 /* Sección de denuncia */

@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import Card from "./Card";
-import "../assets/styles/Topic.css"; // Actualiza la referencia al nuevo archivo CSS
+import Header from "../components/Header"; 
+import Card from "../components/Card"; 
+import "../assets/styles/Topic.css"; 
 
 const options = [
   {

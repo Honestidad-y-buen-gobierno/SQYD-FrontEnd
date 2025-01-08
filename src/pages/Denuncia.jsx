@@ -1,12 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Importa el hook
 import "../assets/styles/Denuncia.css";
 
 function Denuncia() {
-  
+  const navigate = useNavigate(); // Inicializa el hook de navegación
+
+  const handleRedirect = () => {
+    navigate("/topic"); // Redirige a la página de Topic
+  };
+
   return (
     <div className="app-container">
-      <main className="main-c  ontent">
-      <section className="denuncia-section">
+      <main className="main-content">
+        <section className="denuncia-section">
           <div className="denuncia-section-content">
             <h3 className="denuncia-title">
               Formulario para reportar conductas indebidas de funcionarios públicos
@@ -16,11 +22,12 @@ function Denuncia() {
               Tu participación es clave para construir un gobierno más transparente y honesto.
             </p>
             <div className="denuncia-button-container">
-              <button className="denuncia-button">Iniciar Denuncia</button>
+              <button className="denuncia-button" onClick={handleRedirect}>
+                Iniciar Denuncia
+              </button>
             </div>
           </div>
         </section>
-
 
         <section className="info-section">
           <div className="info-card">
