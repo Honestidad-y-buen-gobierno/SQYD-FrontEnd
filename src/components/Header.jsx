@@ -1,19 +1,28 @@
 import React from "react";
-import "../assets/styles/Header.css"; // Archivo de estilos específicos del Header
+import "../assets/styles/Header.css";
+import logo from "../assets/images/logo.png";
+import background from "../assets/images/pattern.png";
 
 function Header() {
   return (
     <header className="header">
-      <div className="header-content">
-        <img
-          src="/logo.png" // Ruta del logo en la carpeta public
-          alt="Logo de la Secretaría Anticorrupción y Buen Gobierno"
-          className="header-logo"
-        />
-        <div className="header-text">
-          <h1 className="header-title">Secretaría Anticorrupción y Buen Gobierno</h1>
-          <h2 className="header-subtitle">Gobierno de Chiapas 2024 - 2030</h2>
-        </div>
+      <div
+        className="header-background"
+        style={{
+          backgroundImage: `url(${background})`,
+        }}
+      ></div>
+      <div className="header-logo">
+        <img src={logo} alt="Logo" />
+      </div>
+      <div className="header-navbar">
+        <nav>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/denuncia">Denuncia</a></li>
+            <li><a href="/seguimiento">Seguimiento de Denuncia</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

@@ -1,0 +1,200 @@
+/* Reset de márgenes y paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 150px ;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* Contenedor principal */
+.app-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+.main-content {
+  padding-top: 20px; /* Ajuste dinámico igual a la altura del header */
+}
+
+/* Sección de denuncia */
+.denuncia-section {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto; 
+  align-items: start; 
+  justify-items: start; 
+  background-image: url('../images/Bienvenida-DenunciaBanner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 8px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.denuncia-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
+  z-index: 1;
+}
+
+.denuncia-section-content {
+  grid-column: 1 / span 1; 
+  grid-row: 1 / span 2; 
+  position: relative;
+  z-index: 2; 
+  text-align: left; 
+  max-width: 500px; 
+}
+
+.denuncia-title,
+.denuncia-description,
+.denuncia-button {
+  position: relative;
+  z-index: 2;
+}
+
+.denuncia-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.denuncia-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+
+.denuncia-button {
+  background-color: #009887;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.denuncia-button:hover {
+  background-color: #00695c;
+  transform: translateY(-2px);
+}
+
+/* Sección de información */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.info-card:nth-child(1) {
+  border-left: 5px solid #009887;
+}
+
+.info-card:nth-child(2) {
+  background-color: #fdecea;
+  border-left: 5px solid #d72d3d;
+}
+
+.info-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.info-card ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.highlight {
+  color: #d72d3d;
+}
+
+.highlight-yes {
+  color: #009887;
+}
+
+/* Patrón de fondo decorativo */
+.info-section::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-image: url('../images/pattern.png');
+  background-repeat: repeat-x;
+  margin-bottom: 10px;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .denuncia-section {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    grid-template-rows: auto auto auto; /* Se adapta al contenido */
+    padding: 20px;
+  }
+
+  .denuncia-section-content {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto */
+  }
+
+  .denuncia-title {
+    font-size: 1.5rem;
+  }
+
+  .denuncia-description {
+    font-size: 1rem;
+  }
+
+  .denuncia-button {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .denuncia-button-container {
+    justify-content: center; /* Centra el botón en pantallas pequeñas */
+  }
+}

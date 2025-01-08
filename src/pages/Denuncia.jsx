@@ -1,43 +1,39 @@
 import React from "react";
-import  "../assets/styles/app.css"; // Asegúrate de tener un archivo CSS para los estilos
+import { useNavigate } from "react-router-dom"; // Importa el hook
+import "../assets/styles/Denuncia.css";
 
-function App() {
+function Denuncia() {
+  const navigate = useNavigate(); // Inicializa el hook de navegación
+
+  const handleRedirect = () => {
+    navigate("/topic"); // Redirige a la página de Topic
+  };
+
   return (
     <div className="app-container">
-      <header className="header">
-        <img
-          src="/logo.png" // Cambia la ruta por tu logo
-          alt="Secretaría Anticorrupción y Buen Gobierno"
-          className="header-logo"
-        />
-        <h1 className="header-title">
-          Secretaría Anticorrupción y Buen Gobierno
-        </h1>
-        <h2 className="header-subtitle">Gobierno de Chiapas 2024 - 2030</h2>
-      </header>
-
-      <nav className="nav-bar">
-        <button className="nav-button">Inicio</button>
-        <button className="nav-button">Denuncia</button>
-        <button className="nav-button">Seguimiento de Denuncia</button>
-      </nav>
-
       <main className="main-content">
         <section className="denuncia-section">
-          <h3 className="denuncia-title">
-            Formulario para reportar conductas indebidas de funcionarios públicos
-            o de particulares relacionados con actividades del gobierno.
-          </h3>
-          <p className="denuncia-description">
-            Tu participación es clave para construir un gobierno más
-            transparente y honesto.
-          </p>
-          <button className="denuncia-button">Iniciar Denuncia</button>
+          <div className="denuncia-section-content">
+            <h3 className="denuncia-title">
+              Formulario para reportar conductas indebidas de funcionarios públicos
+              o de particulares relacionados con actividades del gobierno.
+            </h3>
+            <p className="denuncia-description">
+              Tu participación es clave para construir un gobierno más transparente y honesto.
+            </p>
+            <div className="denuncia-button-container">
+              <button className="denuncia-button" onClick={handleRedirect}>
+                Iniciar Denuncia
+              </button>
+            </div>
+          </div>
         </section>
 
         <section className="info-section">
           <div className="info-card">
-            <h4 className="info-title">Qué <span className="highlight">sí</span> denunciar aquí</h4>
+            <h4 className="info-title">
+              Qué <span className="highlight-yes">sí</span> denunciar aquí
+            </h4>
             <ul>
               <li>Faltas administrativas de funcionarios públicos federales.</li>
               <li>
@@ -54,7 +50,9 @@ function App() {
           </div>
 
           <div className="info-card">
-            <h4 className="info-title">Qué <span className="highlight">no</span> denunciar aquí</h4>
+            <h4 className="info-title">
+              Qué <span className="highlight">no</span> denunciar aquí
+            </h4>
             <ul>
               <li>Trámites y/o servicios.</li>
               <li>Asuntos laborales.</li>
@@ -72,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default Denuncia;

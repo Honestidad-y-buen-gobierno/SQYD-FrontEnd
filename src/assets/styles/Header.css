@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 1000; /* Asegúrate de que esté por encima del contenido */
+}
+
+  
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-image: url('../assets/images/pattern.png');
+    background-repeat: repeat;
+    background-position: top left;
+    z-index: 1;
+  }
+  
+  .header-logo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 2;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo img {
+    height: 100%;
+    width: auto;
+  }
+  
+  .header-navbar {
+    position: relative;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Altura predeterminada */
+    background-color: #009887;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .header-navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .header-navbar nav ul li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .header-navbar nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .header {
+      height: auto;
+    }
+  
+    .header-background {
+      height: 100px;
+    }
+  
+    .header-logo {
+      position: relative;
+      height: 60px;
+      margin-left: 10px;
+    }
+  
+    .header-logo img {
+      height: 100%;
+      width: auto;
+    }
+  
+    .header-navbar {
+      position: relative;
+      top: 0;
+      height: 20px !important; /* Reducida de 30px a 20px con prioridad */
+      background-color: #009887;
+      padding: 0 !important; /* Asegurar que no haya padding adicional */
+      display: flex;
+      justify-content: flex-start;
+      gap: 5px !important;
+    }
+  
+    .header-navbar nav ul {
+      flex-direction: row;
+      padding: 0 !important;
+      gap: 5px !important; /* Reducir el espacio entre enlaces */
+    }
+  
+    .header-navbar nav ul li {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .header-navbar nav ul li a {
+      font-size: 14px;
+      line-height: 20px !important; /* Alinear texto con la altura */
+      text-align: center;
+    }
+  }
+  
