@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom"; // Importa el hook
 import "../assets/styles/Home.css";
 
