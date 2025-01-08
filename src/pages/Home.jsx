@@ -1,4 +1,3 @@
-import React from "react"
 import { useNavigate } from "react-router-dom"; // Importa el hook
 import "../assets/styles/Home.css";
 
@@ -7,7 +6,7 @@ function Home() {
 const navigate = useNavigate(); // Inicializa el hook de navegación
 
 const handleRedirect = () => {
-    navigate("/home"); // Redirige a la página de home
+    navigate("/denuncia"); // Redirige a la página de home
 }
 
     return (
