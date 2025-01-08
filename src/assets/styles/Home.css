@@ -23,7 +23,7 @@
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px;
+    padding: 70px;
   }
   
   .main-content {
@@ -41,13 +41,15 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     color: #ffffff;
     margin-bottom: 30px;
-    position: relative; /* Se mantiene para usar ::before */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
-  
+
+
   .home-section::before {
     content: '';
     position: absolute;
