@@ -23,7 +23,7 @@ function Denuncia() {
             </p>
             <div className="denuncia-button-container">
               <button className="denuncia-button" onClick={handleRedirect}>
-                Iniciar Denuncia
+                Continuar
               </button>
             </div>
           </div>
