@@ -1,0 +1,81 @@
+/* Contenedor principal del ProgressBar */
+.progress-bar-container {
+    width: 100%;
+    max-width: 700px; /* Más ancho para parecerse a la imagen */
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Título */
+  .progress-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px; /* Más espacio entre el título y la barra */
+    color: #b21f1f; /* Rojo */
+  }
+  
+  /* Contenedor de pasos */
+  .progress-steps {
+    display: flex;
+    justify-content: space-between; /* Espaciado uniforme */
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    height: 40px; /* Altura fija */
+  }
+  
+  /* Línea continua detrás de los círculos */
+  .progress-steps::before {
+    content: "";
+    position: absolute;
+    top: 15%; /* Centrar verticalmente */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc; /* Gris claro */
+    z-index: 1; /* Detrás de los círculos */
+  }
+  
+  /* Paso */
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Los círculos encima de la línea */
+  }
+  
+  /* Círculo del paso */
+  .step-circle {
+    width: 36px; /* Tamaño del círculo */
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Etiqueta del paso */
+  .step-label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Estilo del paso activo */
+  .step.active .step-circle {
+    background-color: #005F9E; /* Azul */
+    border: 2px solid #005F9E;
+  }
+  
+  /* Estilo del paso completado */
+  .step.completed .step-circle {
+    background-color: #009887; /* Verde */
+    border: 2px solid #009887;
+  }
+  
