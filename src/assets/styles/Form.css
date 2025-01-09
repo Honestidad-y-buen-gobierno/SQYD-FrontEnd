@@ -1,0 +1,232 @@
+.formulario-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+  width: 600px; 
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 55%; 
+}
+
+.formulario {
+  display: flex;
+  grid-template-columns: 1fr 1fr; 
+  flex-direction: column; 
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px; 
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #555; 
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none; 
+  border-radius: 5px;
+  background-color: #f0f0f0; 
+  color: #333; 
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+textarea.form-control {
+  height: 100px; 
+  resize: none; 
+  grid-column: span 2; 
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpolygon points='0,0 10,0 5,5' style='fill:black;' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  color: #888; 
+}
+
+input[type="date"].form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #888; 
+}
+
+input[type="date"].form-control::-webkit-calendar-picker-indicator {
+  filter: invert(0) brightness(0) contrast(0); /* Icono negro */
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-next {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #009887;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-next:hover {
+  background-color: #00796b;
+}
+
+.btn-back {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #ae1922;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-back:hover {
+  background-color: #8b121c;
+}
+
+/* Estilos para el grupo de checkboxes */
+.checkbox-group {
+  display: flex;
+  justify-content: space-between; /* Alinear pregunta y checkbox */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #009887;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #009887;
+  border-color: #009887;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: "✔";
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row; /* Opciones en línea horizontal */
+  gap: 20px;
+  margin-top: 5px; /* Separación entre el título y las opciones */
+  align-items: center;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.radio-label input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #009887;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked {
+  background-color: #009887;
+  border-color: #009887;
+}
+
+.radio-label input[type="radio"]:checked::after {
+  content: ""; /* Sin marcas adicionales */
+}
+
+.radio-label span {
+  line-height: 1; /* Evita que el texto tenga un espacio adicional debajo */
+  font-size: 14px; /* Tamaño de texto uniforme */
+  color: #333; /* Color del texto */
+}
+
+.form-group {
+  grid-column: span 2; /* Por defecto, todos los campos ocupan el ancho completo */
+}
+
+/* Campos que ocupan la mitad del tamaño */
+.form-group.half-width {
+  width: 48%; /* Para dos campos en una fila */
+  display: inline-block;
+}
+
+.form-group.half-width:first-child {
+  margin-right: 4%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Contenedor para pares de campos (Edad/Escolaridad, Ocupación/Teléfono) */
+.form-pair {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre campos */
+  gap: 20px; /* Espacio entre los pares */
+  width: 100%; /* Ocupan el mismo ancho que los campos superiores */
+}
+
+.form-pair .form-group {
+  width: calc(50% - 10px); /* Cada campo ocupa la mitad del contenedor */
+}
+
+
+/* Botón */
+button {
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #009887;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00796b;
+}
