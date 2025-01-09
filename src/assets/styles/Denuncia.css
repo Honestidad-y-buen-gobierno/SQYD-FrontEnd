@@ -1,4 +1,28 @@
 /* Reset de márgenes y paddings */
+
+@font-face {
+  font-family: 'NovecentoWideBold';
+  src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NovecentoWideBook';
+  src: url('../fonts/Novecento-WideBook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NovecentoMediumm';
+  src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -14,17 +38,17 @@ body {
 }
 
 button {
-  font-family: inherit;
+  font-family: 'NovecentoMediumm', sans-serif;
   border: none;
   cursor: pointer;
 }
 
 /* Contenedor principal */
-.app-container {
+.denuncia-app-container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 70px;
   
 }
 
@@ -43,7 +67,7 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px;
+  padding: 10px;
   border-radius: 8px;
   color: #ffffff;
   margin-bottom: 30px;
@@ -79,6 +103,7 @@ button {
 }
 
 .denuncia-title {
+  font-family: 'NovecentoWideBold', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
@@ -86,6 +111,7 @@ button {
 }
 
 .denuncia-description {
+  font-family: 'NovecentoWideBook', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 30px;
   line-height: 1.5;
@@ -109,12 +135,30 @@ button {
 
 /* Sección de información */
 .info-section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  grid-template-rows: auto auto; /* Dos filas */
   gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.info-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #e91e63,
+    #e91e63 10px,
+    #009887 10px,
+    #009887 20px
+  );
+  z-index: -1;
 }
 
 .info-card {
@@ -122,49 +166,42 @@ button {
   border-radius: 8px;
   padding: 20px;
   width: 100%;
-  max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
 }
 
 .info-card:nth-child(1) {
-  border-left: 5px solid #009887;
+  border: 3px solid #009887;
+  grid-column: 1 / 2; /* Columna 1 */
+  grid-row: 1 / 2; /* Fila 1 */
 }
 
 .info-card:nth-child(2) {
   background-color: #fdecea;
-  border-left: 5px solid #d72d3d;
+  border: 3px solid #d72d3d;
+  grid-column: 2h / 2; /* Columna 2 */
+  grid-row: 1 / 2; /* Fila 2 */
 }
 
 .info-title {
+  font-family: 'NovecentoMedium', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
-  text-align: left;
+}
+
+.info-title span.highlight-yes {
+  color: #009887;
+}
+
+.info-title span.highlight-no {
+  color: #d72d3d;
 }
 
 .info-card ul {
   list-style: disc;
   margin-left: 20px;
-}
-
-.highlight {
-  color: #d72d3d;
-}
-
-.highlight-yes {
-  color: #009887;
-}
-
-/* Patrón de fondo decorativo */
-.info-section::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 30px;
-  background-image: url('../images/pattern.png');
-  background-repeat: repeat-x;
-  margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 
@@ -196,5 +233,18 @@ button {
 
   .denuncia-button-container {
     justify-content: center; /* Centra el botón en pantallas pequeñas */
+  }
+
+  .info-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-card {
+    width: 100%;
+  }
+
+  .info-section::before {
+    width: 10px;
   }
 }

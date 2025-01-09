@@ -10,7 +10,7 @@ function Denuncia() {
   };
 
   return (
-    <div className="app-container">
+    <div className="denuncia-app-container">
       <main className="main-content">
         <section className="denuncia-section">
           <div className="denuncia-section-content">
@@ -30,6 +30,7 @@ function Denuncia() {
         </section>
 
         <section className="info-section">
+          {/* Cuadro verde: Qué sí denunciar aquí */}
           <div className="info-card">
             <h4 className="info-title">
               Qué <span className="highlight-yes">sí</span> denunciar aquí
@@ -42,16 +43,18 @@ function Denuncia() {
                   <li>Manejen o utilicen recursos públicos federales.</li>
                   <li>Participen en contrataciones públicas de ámbito federal.</li>
                   <li>
-                    Estén involucrados en transacciones comerciales internacionales.
+                    Estén involucrados en transacciones comerciales
+                    internacionales.
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
 
+          {/* Cuadro rojo: Qué no denunciar aquí */}
           <div className="info-card">
             <h4 className="info-title">
-              Qué <span className="highlight">no</span> denunciar aquí
+              Qué <span className="highlight-no">no</span> denunciar aquí
             </h4>
             <ul>
               <li>Trámites y/o servicios.</li>

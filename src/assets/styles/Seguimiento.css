@@ -1,0 +1,156 @@
+/* Contenedor principal */
+.seguimiento-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'NovecentoWideBold';
+    src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NovecentoMediumm';
+    src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  
+  /* Contenido principal */
+  .seguimiento-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    gap: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  /* Columna del formulario */
+  .seguimiento-form-container {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .seguimiento-title {
+    font-family: 'NovecentoWideBold', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .seguimiento-form label {
+    font-size: 'NovecentoMediumm', sans-serif;
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .seguimiento-form input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .seguimiento-form input:focus {
+    border-bottom: 2px solid #008c76;
+    box-shadow: 0 2px 4px rgba(0, 140, 118, 0.2);
+    outline: none;
+  }
+  
+  .seguimiento-form input::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+  .seguimiento-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .seguimiento-note {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .seguimiento-button {
+    background-color: #008c76;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .seguimiento-button:hover {
+    background-color: #00695c;
+  }
+  
+  /* Columna de imágenes */
+  .seguimiento-logos-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .seguimiento-logos {
+    text-align: center;
+  }
+  
+  .seguimiento-logos img {
+    max-width: 500px;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .seguimiento-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .seguimiento-form-container {
+      max-width: 100%;
+    }
+  
+    .seguimiento-logos-container {
+      margin-top: 20px;
+    }
+  
+    .seguimiento-logos img {
+      max-width: 150px;
+    }
+  }
+  
