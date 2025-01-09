@@ -11,6 +11,21 @@
     width: 100vw;
     box-sizing: border-box;
   }
+
+  @font-face {
+    font-family: 'NovecentoWideBold';
+    src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NovecentoMediumm';
+    src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
   
   /* Contenido principal */
   .seguimiento-content {
@@ -34,6 +49,7 @@
   }
   
   .seguimiento-title {
+    font-family: 'NovecentoWideBold', sans-serif;
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
@@ -41,6 +57,7 @@
   }
   
   .seguimiento-form label {
+    font-size: 'NovecentoMediumm', sans-serif;
     display: block;
     font-weight: bold;
     color: #333;

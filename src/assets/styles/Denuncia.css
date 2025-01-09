@@ -1,4 +1,28 @@
 /* Reset de márgenes y paddings */
+
+@font-face {
+  font-family: 'NovecentoWideBold';
+  src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NovecentoWideBook';
+  src: url('../fonts/Novecento-WideBook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NovecentoMediumm';
+  src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +38,7 @@ body {
 }
 
 button {
-  font-family: inherit;
+  font-family: 'NovecentoMediumm', sans-serif;
   border: none;
   cursor: pointer;
 }
@@ -79,6 +103,7 @@ button {
 }
 
 .denuncia-title {
+  font-family: 'NovecentoWideBold', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
@@ -86,6 +111,7 @@ button {
 }
 
 .denuncia-description {
+  font-family: 'NovecentoWideBook', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 30px;
   line-height: 1.5;
@@ -158,6 +184,7 @@ button {
 }
 
 .info-title {
+  font-family: 'NovecentoMedium', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
