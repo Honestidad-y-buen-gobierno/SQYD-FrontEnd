@@ -1,0 +1,68 @@
+/* Centrar todo el contenedor */
+.form-navigator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    position: absolute; /* Posición absoluta para centrar en la pantalla */
+    top: 50%; /* Mitad vertical */
+    left: 50%; /* Mitad horizontal */
+    transform: translate(-50%, -50%); /* Ajustar el origen al centro */
+    background-color: #f9f9f9; /* Fondo claro */
+    text-align: center;
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Contenedor del formulario */
+  .form-content {
+    width: 100%;
+    max-width: 700px; /* Ancho máximo */
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center;
+  }
+  
+  /* Etiqueta del formulario */
+  .form-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Botones */
+  .form-buttons button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: #005F9E;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:last-child {
+    background-color: #009887; /* Verde para el botón "Siguiente" */
+  }
+  
+  button:last-child:hover:not(:disabled) {
+    background-color: #009887;
+  }
+  

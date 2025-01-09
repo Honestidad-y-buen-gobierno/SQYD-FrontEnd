@@ -1,10 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import Header from "./components/Header";
 import Denuncia from "./pages/Denuncia";
 import Topic from "./pages/Topic";
 import Home from "./pages/Home";
-import ViewForm from "./pages/ViewForm"; // Importa la nueva vista
+import ViewForm from "./pages/ViewForm"; 
+import Seguimiento from "./pages/Seguimiento";
+import Descripcion from "./pages/FormNavigator";
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
           <Route path="/topic" element={<Topic />} />
           {/* Nueva ruta para la vista del formulario */}
           <Route path="/form" element={<ViewForm />} />
+          {/* Ruta para la página Seguimiento */}
+          <Route path="/seguimiento" element={<Seguimiento/>} />
+          {/* Ruta para la página Descripcion */}
+          <Route path="/descripcion" element={<Descripcion />} />
+
         </Routes>
       </div>
     </Router>
