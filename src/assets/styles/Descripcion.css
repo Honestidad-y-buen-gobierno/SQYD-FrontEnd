@@ -64,3 +64,16 @@
     background-color: #009887;
   }
   
+  @media (max-width: 768px) {
+    .form-navigator {
+      transform: translateX(0); /* Elimina el desplazamiento horizontal en pantallas medianas */
+      padding: 15px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-navigator {
+      transform: translateX(0); /* Asegura que no haya desplazamiento */
+      padding: 10px; /* Reduce aún más el padding en pantallas muy pequeñas */
+    }
+  }

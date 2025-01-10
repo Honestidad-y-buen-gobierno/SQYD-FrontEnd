@@ -76,4 +76,41 @@
     background-color: #009887; /* Verde */
     border: 2px solid #009887;
   }
+
+  @media (max-width: 768px) {
+    .progress-steps {
+      gap: 10px; /* Ajusta el espacio entre pasos */
+    }
+  
+    .step-circle {
+      width: 30px; /* Reduce el tamaño del círculo */
+      height: 30px;
+      font-size: 0.8rem;
+    }
+  
+    .step-label {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .progress-steps {
+      flex-wrap: wrap; /* Permite que los pasos se ajusten a la pantalla */
+      gap: 5px; /* Reduce el espacio entre pasos */
+    }
+  
+    .progress-steps::before {
+      top: calc(50% + 10px); /* Ajusta la posición de la línea */
+    }
+  
+    .step-circle {
+      width: 25px;
+      height: 25px;
+      font-size: 0.7rem;
+    }
+  
+    .step-label {
+      font-size: 0.7rem;
+    }
+}
   

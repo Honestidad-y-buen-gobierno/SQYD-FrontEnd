@@ -203,12 +203,12 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator {
   font-size: 14px;
   font-weight: bold;
 }
-/* Contenedor para pares de campos (Edad/Escolaridad, Ocupación/Teléfono) */
 .form-pair {
   display: flex;
   justify-content: space-between; /* Espaciado entre campos */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente */
   gap: 20px; /* Espacio entre los pares */
-  width: 100%; /* Ocupan el mismo ancho que los campos superiores */
+  width: 100%; 
 }
 
 .form-pair .form-group {
@@ -229,4 +229,21 @@ button {
 
 button:hover {
   background-color: #00796b;
+}
+
+@media (max-width: 768px) {
+  .formulario-container {
+      padding: 15px; /* Reduce el padding en pantallas pequeñas */
+      width: 100%; /* Ajusta el contenedor para pantallas pequeñas */
+
+  }
+  .form-pair .form-group {
+    flex: 1 1 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+}
+.form-buttons {
+  display: flex;
+  flex-direction: column; /* Apila los botones en pantallas pequeñas */
+  gap: 10px;
+  align-items: center;
+}
 }
