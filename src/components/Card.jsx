@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/Card.css";
 
-function Card({ title, icon, description }) {
+function Card({ title, icon, description, onClick }) {
   const [showDescription, setShowDescription] = useState(false);
 
   const handleMouseEnter = () => {
@@ -27,6 +27,7 @@ function Card({ title, icon, description }) {
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      onClick={onClick} // Agregar manejador de clic para redirección
     >
       {/* Contenido principal */}
       <div className={`card-content ${showDescription ? "card-blur" : ""}`}>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/Form.css";
 
-function Form({ onSubmit }) {
-  const [currentStep, setCurrentStep] = useState(1); // Estado para manejar el paso actual
+function Form({ currentStep, handleNext, handleBack, onSubmit }) {
   const [isAnonimo, setIsAnonimo] = useState(false); // Estado para "¿Es una denuncia anónima?"
   const [denunciante, setDenunciante] = useState(""); // Estado para "Denunciante"
   const [requiereProteccion, setRequiereProteccion] = useState(false); // Estado para "¿Requiere medidas de protección?"
@@ -34,59 +33,56 @@ function Form({ onSubmit }) {
   };
 
   const handleAnonimoChange = () => setIsAnonimo(!isAnonimo);
-  const handleDenuncianteChange = (e) => setDenunciante(e.target.value);
+  const handleDenuncianteChange = (e) => {
+    const value = e.target.value;
+    setDenunciante(value);
+    if (value !== "servidor_publico") {
+      setRequiereProteccion(false); // Restablecer medidas de protección si se cambia el denunciante
+      setFormData({
+        ...formData,
+        dependencia: "",
+        adscripcion: "",
+        curp: "",
+      });
+    }
+  };
   const handleProteccionChange = () => setRequiereProteccion(!requiereProteccion);
-
-  const handleNext = () => {
-    if (currentStep < 3) {
-      setCurrentStep(currentStep + 1); // Avanzar al siguiente paso
-    } else {
-      onSubmit(formData); // Enviar todos los datos si es el último paso
-    }
-  };
-
-  const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1); // Retroceder al paso anterior
-    }
-  };
 
   const renderStepContent = () => {
     switch (currentStep) {
-      case 1: 
+      case 1: // Hechos
         return (
-          <>
+          <div className="form-step">
             <div className="form-pair">
-  <div className="form-group">
-    <label htmlFor="fecha">Fecha de los hechos</label>
-    <input
-      type="date"
-      id="fecha"
-      name="fecha"
-      value={formData.fecha}
-      onChange={handleChange}
-      className="form-control"
-    />
-  </div>
-  <div className="form-group">
-    <label htmlFor="dependencia">Dependencia de los hechos</label>
-    <select
-      id="dependencia"
-      name="dependencia"
-      value={formData.dependencia}
-      onChange={handleChange}
-      className="form-control"
-    >
-      <option value="" disabled>
-        Seleccione una opción
-      </option>
-      <option value="dependencia1">Dependencia 1</option>
-      <option value="dependencia2">Dependencia 2</option>
-    </select>
-  </div>
-</div>
-
-            <div className="form-group" style={{ gridColumn: "span 2" }}>
+              <div className="form-group">
+                <label htmlFor="fecha">Fecha de los hechos</label>
+                <input
+                  type="date"
+                  id="fecha"
+                  name="fecha"
+                  value={formData.fecha}
+                  onChange={handleChange}
+                  className="form-control"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="dependencia">Dependencia de los hechos</label>
+                <select
+                  id="dependencia"
+                  name="dependencia"
+                  value={formData.dependencia}
+                  onChange={handleChange}
+                  className="form-control"
+                >
+                  <option value="" disabled>
+                    Seleccione una opción
+                  </option>
+                  <option value="dependencia1">Dependencia 1</option>
+                  <option value="dependencia2">Dependencia 2</option>
+                </select>
+              </div>
+            </div>
+            <div className="form-group">
               <label htmlFor="tramite">Trámite o servicio (opcional)</label>
               <input
                 type="text"
@@ -97,7 +93,7 @@ function Form({ onSubmit }) {
                 className="form-control"
               />
             </div>
-            <div className="form-group" style={{ gridColumn: "span 2" }}>
+            <div className="form-group">
               <label htmlFor="municipio">Municipio</label>
               <select
                 id="municipio"
@@ -113,12 +109,12 @@ function Form({ onSubmit }) {
                 <option value="municipio2">Municipio 2</option>
               </select>
             </div>
-          </>
+          </div>
         );
-      case 2: // Sección de descripción
+      case 2: // Descripción
         return (
-          <>
-            <div className="form-group" style={{ gridColumn: "span 2" }}>
+          <div className="form-step">
+            <div className="form-group">
               <label htmlFor="descripcion">Descripción de los hechos</label>
               <textarea
                 id="descripcion"
@@ -129,12 +125,11 @@ function Form({ onSubmit }) {
                 placeholder="Describe aquí..."
               />
             </div>
-          </>
+          </div>
         );
-      case 3: // Sección de contacto
+      case 3: // Contacto
         return (
-          <>
-            {/* Denuncia anónima */}
+          <div className="form-step">
             <div className="checkbox-group">
               <label>¿Es una denuncia anónima?</label>
               <input
@@ -146,7 +141,7 @@ function Form({ onSubmit }) {
             </div>
 
             {isAnonimo ? (
-              <div className="form-group" style={{ gridColumn: "span 2" }}>
+              <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -160,7 +155,6 @@ function Form({ onSubmit }) {
               </div>
             ) : (
               <>
-                {/* Denunciante */}
                 <div className="form-group">
                   <label>Denunciante:</label>
                   <div className="radio-group">
@@ -172,7 +166,7 @@ function Form({ onSubmit }) {
                         onChange={handleDenuncianteChange}
                         checked={denunciante === "particular"}
                       />
-                      Particular
+                      <span>Particular</span>
                     </label>
                     <label className="radio-label">
                       <input
@@ -182,208 +176,199 @@ function Form({ onSubmit }) {
                         onChange={handleDenuncianteChange}
                         checked={denunciante === "servidor_publico"}
                       />
-                      Servidor Público
+                      <span>Servidor Público</span>
                     </label>
                   </div>
                 </div>
 
-                {/* Opciones para servidor público */}
                 {denunciante === "servidor_publico" && (
+                  <div className="checkbox-group">
+                    <label>¿Requiere medidas de protección?</label>
+                    <input
+                      type="checkbox"
+                      name="requiereProteccion"
+                      onChange={handleProteccionChange}
+                      checked={requiereProteccion}
+                    />
+                  </div>
+                )}
+
+                {(requiereProteccion) && (
                   <>
-                    <div className="checkbox-group">
-                      <label>¿Requiere medidas de protección?</label>
+                    <div className="form-group">
+                      <label htmlFor="dependencia">Dependencia</label>
+                      <select
+                        id="dependencia"
+                        name="dependencia"
+                        value={formData.dependencia}
+                        onChange={handleChange}
+                        className="form-control"
+                      >
+                        <option value="">Selecciona tu dependencia</option>
+                        <option value="dependencia1">Dependencia 1</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="adscripcion">Área de adscripción</label>
+                      <select
+                        id="adscripcion"
+                        name="adscripcion"
+                        value={formData.adscripcion}
+                        onChange={handleChange}
+                        className="form-control"
+                      >
+                        <option value="">Selecciona tu área</option>
+                        <option value="adscripcion1">Área 1</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="curp">CURP</label>
                       <input
-                        type="checkbox"
-                        name="requiereProteccion"
-                        onChange={handleProteccionChange}
-                        checked={requiereProteccion}
+                        type="text"
+                        id="curp"
+                        name="curp"
+                        value={formData.curp}
+                        onChange={handleChange}
+                        className="form-control"
+                        placeholder="Ingresa tu CURP"
                       />
                     </div>
-
-                    {requiereProteccion && (
-                      <>
-                        <div className="form-group">
-                          <label htmlFor="dependencia">Dependencia</label>
-                          <select
-                            id="dependencia"
-                            name="dependencia"
-                            value={formData.dependencia}
-                            onChange={handleChange}
-                            className="form-control"
-                          >
-                            <option value="">Selecciona tu dependencia</option>
-                            <option value="dependencia1">Dependencia 1</option>
-                          </select>
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="adscripcion">Área de adscripción</label>
-                          <select
-                            id="adscripcion"
-                            name="adscripcion"
-                            value={formData.adscripcion}
-                            onChange={handleChange}
-                            className="form-control"
-                          >
-                            <option value="">Selecciona tu área</option>
-                            <option value="adscripcion1">Área 1</option>
-                          </select>
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="curp">CURP</label>
-                          <input
-                            type="text"
-                            id="curp"
-                            name="curp"
-                            value={formData.curp}
-                            onChange={handleChange}
-                            className="form-control"
-                            placeholder="Ingresa tu CURP"
-                          />
-                        </div>
-                      </>
-                    )}
                   </>
                 )}
 
-                {/* Campos comunes */}
-                <div className="form-group">
-                  <label htmlFor="nombre">Nombre</label>
-                  <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleChange}
-                    className="form-control"
-                    placeholder="Ingresa tu nombre"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="primerApellido">Primer apellido</label>
-                  <input
-                    type="text"
-                    id="primerApellido"
-                    name="primerApellido"
-                    value={formData.primerApellido}
-                    onChange={handleChange}
-                    className="form-control"
-                    placeholder="Ingresa tu primer apellido"
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="segundoApellido">Segundo apellido</label>
-                  <input
-                    type="text"
-                    id="segundoApellido"
-                    name="segundoApellido"
-                    value={formData.segundoApellido}
-                    onChange={handleChange}
-                    className="form-control"
-                    placeholder="Ingresa tu segundo apellido"
-                  />
-                </div>
+                {(denunciante || requiereProteccion) && (
+                  <>
+                    <div className="form-group">
+                      <label htmlFor="nombre">Nombre</label>
+                      <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        value={formData.nombre}
+                        onChange={handleChange}
+                        className="form-control"
+                        placeholder="Ingresa tu nombre"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="primerApellido">Primer Apellido</label>
+                      <input
+                        type="text"
+                        id="primerApellido"
+                        name="primerApellido"
+                        value={formData.primerApellido}
+                        onChange={handleChange}
+                        className="form-control"
+                        placeholder="Ingresa tu primer apellido"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="segundoApellido">Segundo Apellido</label>
+                      <input
+                        type="text"
+                        id="segundoApellido"
+                        name="segundoApellido"
+                        value={formData.segundoApellido}
+                        onChange={handleChange}
+                        className="form-control"
+                        placeholder="Ingresa tu segundo apellido"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Sexo</label>
+                      <div className="radio-group">
+                        <label className="radio-label">
+                          <input
+                            type="radio"
+                            name="sexo"
+                            value="hombre"
+                            onChange={handleChange}
+                            checked={formData.sexo === "hombre"}
+                          />
+                          <span>Hombre</span>
+                        </label>
+                        <label className="radio-label">
+                          <input
+                            type="radio"
+                            name="sexo"
+                            value="mujer"
+                            onChange={handleChange}
+                            checked={formData.sexo === "mujer"}
+                          />
+                          <span>Mujer</span>
+                        </label>
+                        <label className="radio-label">
+                          <input
+                            type="radio"
+                            name="sexo"
+                            value="otro"
+                            onChange={handleChange}
+                            checked={formData.sexo === "otro"}
+                          />
+                          <span>Otro</span>
+                        </label>
+                      </div>
+                    </div>
+                  </>
+                )}
 
-                {/* Sexo */}
-                <div className="form-group">
-  <label>Sexo:</label>
-  <div className="radio-group">
-    <label className="radio-label">
-      <input
-        type="radio"
-        name="sexo"
-        value="hombre"
-        onChange={handleChange}
-        checked={formData.sexo === "hombre"}
-      />
-      <span>Hombre</span>
-    </label>
-    <label className="radio-label">
-      <input
-        type="radio"
-        name="sexo"
-        value="mujer"
-        onChange={handleChange}
-        checked={formData.sexo === "mujer"}
-      />
-      <span>Mujer</span>
-    </label>
-    <label className="radio-label">
-      <input
-        type="radio"
-        name="sexo"
-        value="otro"
-        onChange={handleChange}
-        checked={formData.sexo === "otro"}
-      />
-      <span>Otro</span>
-    </label>
-  </div>
-</div>
-
-
-                {/* Campos de media anchura */}
                 <div className="form-pair">
-  <div className="form-group">
-    <label htmlFor="edad">Edad</label>
-    <input
-      type="number"
-      id="edad"
-      name="edad"
-      value={formData.edad}
-      onChange={handleChange}
-      className="form-control"
-      placeholder="Ingresa tu edad"
-    />
-  </div>
-  <div className="form-group">
-    <label htmlFor="escolaridad">Escolaridad</label>
-    <select
-      id="escolaridad"
-      name="escolaridad"
-      value={formData.escolaridad}
-      onChange={handleChange}
-      className="form-control"
-    >
-      <option value="">Selecciona tu escolaridad</option>
-      <option value="primaria">Primaria</option>
-      <option value="secundaria">Secundaria</option>
-      <option value="preparatoria">Preparatoria</option>
-      <option value="universidad">Universidad</option>
-    </select>
-  </div>
-</div>
+                  <div className="form-group">
+                    <label htmlFor="edad">Edad</label>
+                    <input
+                      type="number"
+                      id="edad"
+                      name="edad"
+                      value={formData.edad}
+                      onChange={handleChange}
+                      className="form-control"
+                      placeholder="Ingresa tu edad"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="escolaridad">Escolaridad</label>
+                    <select
+                      id="escolaridad"
+                      name="escolaridad"
+                      value={formData.escolaridad}
+                      onChange={handleChange}
+                      className="form-control"
+                    >
+                      <option value="">Selecciona tu escolaridad</option>
+                      <option value="primaria">Primaria</option>
+                      <option value="secundaria">Secundaria</option>
+                      <option value="preparatoria">Preparatoria</option>
+                      <option value="universidad">Universidad</option>
+                    </select>
+                  </div>
+                </div>
 
-
-
-<div className="form-pair">
-  <div className="form-group">
-    <label htmlFor="ocupacion">Ocupación</label>
-    <input
-      type="text"
-      id="ocupacion"
-      name="ocupacion"
-      value={formData.ocupacion}
-      onChange={handleChange}
-      className="form-control"
-      placeholder="Ingresa tu ocupación"
-    />
-  </div>
-  <div className="form-group">
-    <label htmlFor="telefono">Número de Teléfono</label>
-    <input
-      type="tel"
-      id="telefono"
-      name="telefono"
-      value={formData.telefono}
-      onChange={handleChange}
-      className="form-control"
-      placeholder="Ingresa tu número de teléfono"
-    />
-  </div>
-</div>
-
-
-
+                <div className="form-pair">
+                  <div className="form-group">
+                    <label htmlFor="ocupacion">Ocupación</label>
+                    <input
+                      type="text"
+                      id="ocupacion"
+                      name="ocupacion"
+                      value={formData.ocupacion}
+                      onChange={handleChange}
+                      className="form-control"
+                      placeholder="Ingresa tu ocupación"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="telefono">Número de Teléfono</label>
+                    <input
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      className="form-control"
+                      placeholder="Ingresa tu número de teléfono"
+                    />
+                  </div>
+                </div>
 
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
@@ -399,7 +384,7 @@ function Form({ onSubmit }) {
                 </div>
               </>
             )}
-          </>
+          </div>
         );
       default:
         return null;
@@ -411,13 +396,15 @@ function Form({ onSubmit }) {
       <form className="formulario" onSubmit={(e) => e.preventDefault()}>
         {renderStepContent()}
         <div className="form-buttons">
-          {currentStep > 1 && (
-            <button type="button" className="btn-back" onClick={handleBack}>
-              Atrás
-            </button>
-          )}
-          <button type="button" className="btn-next" onClick={handleNext}>
-            {currentStep < 3 ? "Continuar" : "Enviar"}
+          <button type="button" className="btn-back" onClick={handleBack} disabled={currentStep === 1}>
+            Atrás
+          </button>
+          <button
+            type="button"
+            className="btn-next"
+            onClick={currentStep < 3 ? handleNext : () => onSubmit(formData)}
+          >
+            {currentStep < 3 ? "Siguiente" : "Enviar"}
           </button>
         </div>
       </form>
