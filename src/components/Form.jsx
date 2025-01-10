@@ -33,7 +33,19 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
   };
 
   const handleAnonimoChange = () => setIsAnonimo(!isAnonimo);
-  const handleDenuncianteChange = (e) => setDenunciante(e.target.value);
+  const handleDenuncianteChange = (e) => {
+    const value = e.target.value;
+    setDenunciante(value);
+    if (value !== "servidor_publico") {
+      setRequiereProteccion(false); // Restablecer medidas de protección si se cambia el denunciante
+      setFormData({
+        ...formData,
+        dependencia: "",
+        adscripcion: "",
+        curp: "",
+      });
+    }
+  };
   const handleProteccionChange = () => setRequiereProteccion(!requiereProteccion);
 
   const renderStepContent = () => {
