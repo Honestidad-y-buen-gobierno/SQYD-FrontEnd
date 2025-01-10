@@ -1,11 +1,12 @@
-import  { useState } from "react";
+import React, { useState } from "react";
 import ProgressBar from "../components/ProgressBar";
+import Form from "../components/Form"; // Importamos el formulario
 import "../assets/styles/Descripcion.css";
 
 const FormNavigator = () => {
   const steps = ["HECHOS", "DESCRIPCIÓN", "CONTACTO"];
-  const [currentStep, setCurrentStep] = useState(1);
-  const [completedSteps, setCompletedSteps] = useState([]);
+  const [currentStep, setCurrentStep] = useState(1); // Controlamos el paso actual
+  const [completedSteps, setCompletedSteps] = useState([]); // Pasos completados
 
   const handleNext = () => {
     if (currentStep < steps.length) {
@@ -30,25 +31,28 @@ const FormNavigator = () => {
     }
   };
 
+  const handleFormSubmit = (formData) => {
+    console.log("Formulario enviado con datos:", formData);
+    // Aquí puedes manejar el envío del formulario
+  };
+
   return (
     <div className="form-navigator">
+      {/* Barra de progreso */}
       <ProgressBar
         steps={steps}
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
         completedSteps={completedSteps}
       />
-      <div className="form-content">
-        <h3>Contenido de: {steps[currentStep - 1]}</h3>
-        <div className="form-buttons">
-          <button onClick={handleBack} disabled={currentStep === 1}>
-            Atrás
-          </button>
-          <button onClick={handleNext} disabled={currentStep === steps.length}>
-            Siguiente
-          </button>
-        </div>
-      </div>
+
+      {/* Formulario */}
+      <Form
+        currentStep={currentStep} // Paso actual
+        handleNext={handleNext} // Mover al siguiente paso
+        handleBack={handleBack} // Mover al paso anterior
+        onSubmit={handleFormSubmit} // Manejo del envío
+      />
     </div>
   );
 };
