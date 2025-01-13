@@ -1,0 +1,155 @@
+{
+    "Delitos": [
+      {
+        "title": "Abuso de Autoridad",
+        "emoji": "🔒",
+        "description": "Uso indebido del poder para beneficio personal o perjudicar a otros."
+      },
+      {
+        "title": "Deficiencia de Trámites",
+        "emoji": "📋",
+        "description": "Retrasos o errores en la gestión administrativa."
+      },
+      {
+        "title": "Deshonestidad",
+        "emoji": "💔",
+        "description": "Falta de integridad en la ejecución de funciones."
+      },
+      {
+        "title": "Desvío de Recursos",
+        "emoji": "💸",
+        "description": "Uso indebido de fondos públicos para fines personales."
+      },
+      {
+        "title": "Favoritismo",
+        "emoji": "👥",
+        "description": "Preferencias injustificadas hacia ciertos individuos."
+      },
+      {
+        "title": "Nepotismo",
+        "emoji": "👨‍👩‍👦",
+        "description": "Asignación de puestos a familiares o amigos sin mérito."
+      },
+      {
+        "title": "Prepotencia",
+        "emoji": "😤",
+        "description": "Actitud autoritaria o arrogante en el ejercicio de funciones."
+      },
+      {
+        "title": "Servicio Mal Proporcionado",
+        "emoji": "⚠️",
+        "description": "Prestación inadecuada de servicios públicos."
+      },
+      {
+        "title": "Soborno (Intento de)",
+        "emoji": "💵",
+        "description": "Ofrecimiento o aceptación de pagos ilegales."
+      },
+      {
+        "title": "Otros",
+        "emoji": "❓",
+        "description": "Cualquier otro acto no listado aquí."
+      },
+      {
+        "title": "Petición",
+        "emoji": "📝",
+        "description": "Solicitudes indebidas fuera del procedimiento regular."
+      },
+      {
+        "title": "Acoso y/o Hostigamiento Sexual",
+        "emoji": "🚫",
+        "description": "Conducta inapropiada de índole sexual."
+      },
+      {
+        "title": "Negligencia",
+        "emoji": "⚙️",
+        "description": "Falta de cuidado en la ejecución de responsabilidades."
+      },
+      {
+        "title": "Proselitismo",
+        "emoji": "📢",
+        "description": "Promoción de intereses políticos en horario laboral."
+      },
+      {
+        "title": "Cohecho",
+        "emoji": "💰",
+        "description": "Aceptación de pagos para actos indebidos."
+      },
+      {
+        "title": "Peculado",
+        "emoji": "🛠️",
+        "description": "Uso de bienes públicos para beneficio personal."
+      },
+      {
+        "title": "Desvío de recursos públicos",
+        "emoji": "🔄",
+        "description": "Redirección no autorizada de fondos públicos."
+      },
+      {
+        "title": "Utilización indebida de información privilegiada",
+        "emoji": "🔑",
+        "description": "Uso indebido de datos confidenciales."
+      },
+      {
+        "title": "Abuso de funciones",
+        "emoji": "📌",
+        "description": "Realización de actos que exceden las atribuciones."
+      },
+      {
+        "title": "Conflicto de interés",
+        "emoji": "⚖️",
+        "description": "Intereses personales que afectan decisiones públicas."
+      },
+      {
+        "title": "Contratación indebida",
+        "emoji": "📜",
+        "description": "Asignación ilegal de contratos o recursos."
+      },
+      {
+        "title": "Enriquecimiento oculto u ocultamiento de conflicto de interés",
+        "emoji": "🏦",
+        "description": "Ganancias ocultas por medio de abuso de poder."
+      },
+      {
+        "title": "Tráfico de influencias",
+        "emoji": "🌐",
+        "description": "Uso de conexiones personales para obtener beneficios."
+      },
+      {
+        "title": "Encubrimiento",
+        "emoji": "🙈",
+        "description": "Ocultar información sobre faltas administrativas."
+      },
+      {
+        "title": "Desacato",
+        "emoji": "🚨",
+        "description": "Incumplimiento de órdenes o regulaciones."
+      },
+      {
+        "title": "Simular conductas no graves durante la investigación",
+        "emoji": "🎭",
+        "description": "Fingir acciones para evitar sanciones."
+      },
+      {
+        "title": "No iniciar el procedimiento correspondiente ante la autoridad competente",
+        "emoji": "📂",
+        "description": "Omisión de responsabilidades ante delitos detectados."
+      },
+      {
+        "title": "Revelar identidad de un denunciante anónimo",
+        "emoji": "🕵️‍♂️",
+        "description": "Divulgar información confidencial del denunciante."
+      },
+      {
+        "title": "Incumplir con las funciones, atribuciones y comisiones encomendas",
+        "emoji": "🔧",
+        "description": "No cumplir las tareas asignadas de forma adecuada."
+      },
+      {
+        "title": "No denunciar actos u omisiones que puedan constituir faltas administrativas",
+        "emoji": "❌",
+        "description": "Silencio ante delitos administrativos detectados."
+      }
+    ]
+  }
+  
