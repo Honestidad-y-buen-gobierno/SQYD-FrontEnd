@@ -1,27 +1,27 @@
 .form-navigator {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
-  align-items: center; 
-  position: relative; 
-  width: 100%; 
+  justify-content: center; 
+  position: relative;
+  width: 100%;
   min-height: calc(100vh - 110px); 
-  padding: 20px; 
-  box-sizing: border-box; 
-  overflow-y: auto; 
-  margin-top: 60px; 
-  transform: translateX(270px); 
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  margin-top: 125px; 
+  transform: translateX(0); 
 }
   
   
   .form-content {
     width: 100%;
-    max-width: 700px; /* Ancho máximo */
+    max-width: 700px; 
     background: white;
     padding: 20px;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     text-align: center;
+    margin: 0 auto; 
   }
   
   /* Etiqueta del formulario */
@@ -69,11 +69,25 @@
       transform: translateX(0); /* Elimina el desplazamiento horizontal en pantallas medianas */
       padding: 15px; /* Ajusta el padding para pantallas más pequeñas */
     }
+  
+    .form-content {
+      max-width: 90%; /* Reduce el ancho máximo en pantallas medianas */
+    }
   }
   
   @media (max-width: 480px) {
     .form-navigator {
       transform: translateX(0); /* Asegura que no haya desplazamiento */
       padding: 10px; /* Reduce aún más el padding en pantallas muy pequeñas */
+    }
+  
+    .form-content {
+      padding: 15px; /* Ajusta el padding interno */
+      max-width: 100%; /* Ocupa el ancho completo en pantallas muy pequeñas */
+    }
+  
+    .form-buttons button {
+      font-size: 0.9rem; /* Ajusta el tamaño de los botones */
+      padding: 10px 15px;
     }
   }
