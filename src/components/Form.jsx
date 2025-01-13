@@ -132,19 +132,21 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
       case 1:
         return (
           <div className="form-step">
-            <div className="form-group">
-              <label htmlFor="fecha">Fecha de los hechos</label>
-              <input
-                type="date"
-                id="fecha"
-                name="fecha"
-                value={formData.fecha}
-                onChange={handleChange}
-                className={`form-control ${
-                  validationErrors.includes("fecha") ? "is-invalid" : ""
-                }`}
-              />
-            </div>
+           <div className="form-group">
+  <label htmlFor="fecha">Fecha de los hechos</label>
+  <input
+    type="date"
+    id="fecha"
+    name="fecha"
+    value={formData.fecha}
+    onChange={handleChange}
+    max={new Date().toISOString().split("T")[0]} 
+    className={`form-control ${
+      validationErrors.includes("fecha") ? "is-invalid" : ""
+    }`}
+  />
+</div>
+
             <div className="form-group">
               <label htmlFor="dependencia">Dependencia de los hechos</label>
               <Select
