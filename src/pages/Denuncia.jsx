@@ -33,7 +33,7 @@ function Denuncia() {
           {/* Cuadro verde: Qué sí denunciar aquí */}
           <div className="info-card">
             <h4 className="info-title">
-              Qué <span className="highlight-yes">sí</span> denunciar aquí
+              Qué <span className="highlight-yes">SI</span> denunciar aquí
             </h4>
             <ul>
               <li>Faltas administrativas de funcionarios públicos federales.</li>
@@ -54,7 +54,7 @@ function Denuncia() {
           {/* Cuadro rojo: Qué no denunciar aquí */}
           <div className="info-card">
             <h4 className="info-title">
-              Qué <span className="highlight-no">no</span> denunciar aquí
+              Qué <span className="highlight-no">NO</span> denunciar aquí
             </h4>
             <ul>
               <li>Trámites y/o servicios.</li>
