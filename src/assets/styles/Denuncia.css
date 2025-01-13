@@ -30,7 +30,12 @@
 }
 
 body {
-  padding-top: 150px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 0; 
+  margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f5f5f5;
   color: #333;
@@ -47,13 +52,15 @@ button {
 .denuncia-app-container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
   padding: 70px;
+  padding-top: 150px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   
 }
 
 .main-content {
-  padding-top: 20px; /* Ajuste dinámico igual a la altura del header */
+  padding-top: 20px; 
 }
 
 /* Sección de denuncia */
@@ -246,5 +253,59 @@ button {
 
   .info-section::before {
     width: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .denuncia-app-container {
+    padding: 20px;
+  }
+
+  .denuncia-section {
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .denuncia-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .denuncia-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .denuncia-button {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+
+  .info-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .info-card {
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: none; /* Opcional: elimina sombra para diseño más limpio en móviles */
+    border: 1px solid #ccc;
+  }
+
+  .info-section::before {
+    display: none; /* Oculta la línea decorativa en pantallas pequeñas */
+  }
+
+  .info-title {
+    font-size: 1.2rem;
+  }
+
+  .info-title span.highlight-yes {
+    font-size: 1rem;
+  }
+
+  .info-title span.highlight-no {
+    font-size: 1rem;
   }
 }
