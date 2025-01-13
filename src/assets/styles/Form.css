@@ -4,6 +4,7 @@
   align-items: flex-start;
   margin: auto;
   width: 600px; 
+  max-width: 600px; /* Asegura que no se reduzca en dispositivos móviles */
   padding: 30px;
   background-color: #fff;
   border-radius: 15px;
@@ -47,6 +48,7 @@ textarea.form-control {
   height: 100px; 
   resize: none; 
   grid-column: span 2; 
+  max-width: 100%; /* Evita que se reduzca en dispositivos móviles */
 }
 
 select.form-control {
@@ -69,6 +71,7 @@ input[type="date"].form-control {
 
 input[type="date"].form-control::-webkit-calendar-picker-indicator {
   filter: invert(0) brightness(0) contrast(0); /* Icono negro */
+  opacity: 0.8; /* Mejora visibilidad */
 }
 
 .form-buttons {
@@ -203,6 +206,7 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator {
   font-size: 14px;
   font-weight: bold;
 }
+
 .form-pair {
   display: flex;
   justify-content: space-between; /* Espaciado entre campos */
@@ -214,7 +218,6 @@ input[type="date"].form-control::-webkit-calendar-picker-indicator {
 .form-pair .form-group {
   width: calc(50% - 10px); /* Cada campo ocupa la mitad del contenedor */
 }
-
 
 /* Botón */
 button {
@@ -233,17 +236,50 @@ button:hover {
 
 @media (max-width: 768px) {
   .formulario-container {
-      padding: 15px; /* Reduce el padding en pantallas pequeñas */
-      width: 100%; /* Ajusta el contenedor para pantallas pequeñas */
-
+    padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    width: 100%; /* Ajusta el contenedor para pantallas pequeñas */
+    max-width: 600px; /* Fija el ancho máximo en dispositivos móviles */
   }
   .form-pair .form-group {
     flex: 1 1 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+  }
+  textarea.form-control {
+    width: 100%; /* Asegura ancho completo */
+  }
+  .form-buttons {
+    display: flex;
+    flex-direction: column; /* Apila los botones en pantallas pequeñas */
+    gap: 10px;
+    align-items: center;
+  }
 }
-.form-buttons {
-  display: flex;
-  flex-direction: column; /* Apila los botones en pantallas pequeñas */
-  gap: 10px;
-  align-items: center;
+.form-control.is-invalid {
+  border: 2px solid #ff5c5c;
+  background-color: #ffe5e5;
 }
+
+textarea.form-control.is-invalid {
+  border: 2px solid #ff5c5c;
+  background-color: #ffe5e5;
+}
+
+select.form-control.is-invalid {
+  border: 2px solid #ff5c5c;
+  background-color: #ffe5e5;
+}
+
+.form-error {
+  margin-top: 1rem;
+  padding: 10px;
+  background-color: #ffe5e5;
+  border: 1px solid #ff5c5c;
+  color: #d8000c;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+option[disabled] {
+  font-weight: bold;
+  color: #555;
 }
