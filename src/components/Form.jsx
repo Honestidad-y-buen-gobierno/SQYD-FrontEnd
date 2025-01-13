@@ -122,6 +122,10 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
       handleNext();
     }
   };
+  const isMobileDevice = () => {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  };
+  
 
   const renderStepContent = () => {
     switch (currentStep) {
@@ -145,7 +149,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
               <label htmlFor="dependencia">Dependencia de los hechos</label>
               <Select
                 options={dependenciasOptions}
-                isSearchable
+                isSearchable={!isMobileDevice()} 
                 onChange={(selectedOption) =>
                   handleSelectChange("dependencia", selectedOption)
                 }
@@ -173,7 +177,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
               <label htmlFor="municipio">Municipio</label>
               <Select
                 options={municipiosOptions}
-                isSearchable
+                isSearchable={!isMobileDevice()} 
                 onChange={(selectedOption) =>
                   handleSelectChange("municipio", selectedOption)
                 }
@@ -281,7 +285,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
               <label htmlFor="dependencia">Dependencia</label>
               <Select
                 options={dependenciasOptions}
-                isSearchable
+                isSearchable={!isMobileDevice()} 
                 onChange={(selectedOption) =>
                   handleSelectChange("dependencia", selectedOption)
                 }
@@ -418,7 +422,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
     id="escolaridad"
     name="escolaridad"
     options={escolaridadOptions}
-    isSearchable
+    isSearchable={!isMobileDevice()} 
     onChange={(selectedOption) =>
       handleSelectChange("escolaridad", selectedOption)
     }
