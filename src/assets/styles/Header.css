@@ -120,6 +120,7 @@
       display: flex;
       justify-content: flex-start;
       gap: 5px !important;
+      padding-bottom: 10px; 
     }
   
     .header-navbar nav ul {
