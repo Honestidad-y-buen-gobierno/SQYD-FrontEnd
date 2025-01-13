@@ -40,6 +40,7 @@ body {
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
+  
 }
 
 button {
@@ -215,8 +216,10 @@ button {
 /* Responsivo */
 @media (max-width: 768px) {
   .denuncia-section {
-    grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
-    grid-template-rows: auto auto auto; /* Se adapta al contenido */
+    display: flex; /* Convierte en flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
     padding: 20px;
   }
 
@@ -227,10 +230,12 @@ button {
 
   .denuncia-title {
     font-size: 1.5rem;
+    text-align: center; /* Centra el texto */
   }
 
   .denuncia-description {
     font-size: 1rem;
+    text-align: center; /* Centra el texto */
   }
 
   .denuncia-button {
@@ -239,16 +244,20 @@ button {
   }
 
   .denuncia-button-container {
-    justify-content: center; /* Centra el botón en pantallas pequeñas */
+    display: flex; /* Asegura flexibilidad */
+    justify-content: center; /* Centra horizontalmente */
   }
 
   .info-section {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Convierte en flexbox */
+    flex-direction: column; /* Cambia a diseño de columna */
+    align-items: center; /* Centra horizontalmente */
+    padding: 20px;
   }
 
   .info-card {
     width: 100%;
+    margin-bottom: 15px; /* Espaciado entre tarjetas */
   }
 
   .info-section::before {
@@ -258,10 +267,23 @@ button {
 
 @media (max-width: 480px) {
   .denuncia-app-container {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 90px;
+    max-width: 90%;
+    box-sizing: border-box;
   }
 
   .denuncia-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 15px;
     border-radius: 6px;
   }
@@ -269,11 +291,13 @@ button {
   .denuncia-title {
     font-size: 1.2rem;
     margin-bottom: 15px;
+    text-align: center;
   }
 
   .denuncia-description {
     font-size: 0.9rem;
     line-height: 1.4;
+    text-align: center;
   }
 
   .denuncia-button {
@@ -282,29 +306,32 @@ button {
   }
 
   .info-section {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding: 10px;
   }
 
   .info-card {
     padding: 15px;
     margin-bottom: 15px;
-    box-shadow: none; /* Opcional: elimina sombra para diseño más limpio en móviles */
+    box-shadow: none;
     border: 1px solid #ccc;
+    text-align: center;
   }
 
   .info-section::before {
-    display: none; /* Oculta la línea decorativa en pantallas pequeñas */
+    display: none;
   }
 
   .info-title {
     font-size: 1.2rem;
+    text-align: center;
   }
 
-  .info-title span.highlight-yes {
-    font-size: 1rem;
-  }
-
+  .info-title span.highlight-yes,
   .info-title span.highlight-no {
     font-size: 1rem;
   }
