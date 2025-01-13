@@ -109,6 +109,8 @@
     .header-logo img {
       height: 100%;
       width: auto;
+      padding-bottom: 10px;
+      padding-top: 10px;
     }
   
     .header-navbar {
