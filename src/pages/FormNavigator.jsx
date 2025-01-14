@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importar para navegación
 import ProgressBar from "../components/ProgressBar";
-import Form from "../components/Form"; // Importamos el formulario
-import "../assets/styles/Descripcion.css";
+import Form from "../components/Form"; // Formulario
+import "../assets/styles/Descripcion.css"; // Estilos específicos del componente
 
 const FormNavigator = () => {
   const steps = ["HECHOS", "DESCRIPCIÓN", "CONTACTO"];
-  const [currentStep, setCurrentStep] = useState(1); // Controlamos el paso actual
+  const [currentStep, setCurrentStep] = useState(1); // Paso actual
   const [completedSteps, setCompletedSteps] = useState([]); // Pasos completados
+  const [formData, setFormData] = useState({}); // Datos del formulario
+  const navigate = useNavigate(); // Hook para navegación
+  const { temaSeleccionado } = location.state || {}; // Extrae el tema desde el estado de navegación
 
   const handleNext = () => {
     if (currentStep < steps.length) {
@@ -31,9 +35,9 @@ const FormNavigator = () => {
     }
   };
 
-  const handleFormSubmit = (formData) => {
-    console.log("Formulario enviado con datos:", formData);
-    // Aquí puedes manejar el envío del formulario
+  const handleFormSubmit = (data) => {
+    setFormData(data, temaSeleccionado); // Guardar datos del formulario
+    navigate("/summary", { state: { formData: data, temaSeleccionado } }); // Navegar a la vista Summary con los datos
   };
 
   return (
@@ -49,9 +53,9 @@ const FormNavigator = () => {
       {/* Formulario */}
       <Form
         currentStep={currentStep} // Paso actual
-        handleNext={handleNext} // Mover al siguiente paso
-        handleBack={handleBack} // Mover al paso anterior
-        onSubmit={handleFormSubmit} // Manejo del envío
+        handleNext={handleNext} // Manejo para avanzar al siguiente paso
+        handleBack={handleBack} // Manejo para retroceder al paso anterior
+        onSubmit={handleFormSubmit} // Manejo para enviar el formulario
       />
     </div>
   );
