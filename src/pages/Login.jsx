@@ -18,7 +18,7 @@ function login() {
             />
              <label htmlFor="folio">Contraseña*</label>
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               placeholder="INGRESE SU CONTRASEÑA "
