@@ -159,8 +159,11 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
                   (option) => option.value === formData.dependencia
                 )}
                 placeholder="Seleccione una dependencia"
-                className={`form-control ${
-                  validationErrors.includes("dependencia") ? "is-invalid" : ""
+                classNamePrefix="custom-select"
+                className={`${
+                  validationErrors.includes("dependencia")
+                    ? "custom-select__control--is-invalid"
+                    : ""
                 }`}
               />
             </div>
@@ -187,8 +190,11 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
                   (option) => option.value === formData.municipio
                 )}
                 placeholder="Seleccione un municipio"
-                className={`form-control ${
-                  validationErrors.includes("municipio") ? "is-invalid" : ""
+                classNamePrefix="custom-select"
+                className={`${
+                  validationErrors.includes("municipio")
+                    ? "custom-select__control--is-invalid"
+                    : ""
                 }`}
               />
             </div>
@@ -295,8 +301,11 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
                   (option) => option.value === formData.dependencia
                 )}
                 placeholder="Seleccione una dependencia"
-                className={`form-control ${
-                  validationErrors.includes("dependencia") ? "is-invalid" : ""
+                classNamePrefix="custom-select"
+                className={`${
+                  validationErrors.includes("dependencia")
+                    ? "custom-select__control--is-invalid"
+                    : ""
                 }`}
               />
             </div>  
@@ -421,21 +430,24 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
         <div className="form-group">
           <label htmlFor="escolaridad">Escolaridad</label>
           <Select
-    id="escolaridad"
-    name="escolaridad"
-    options={escolaridadOptions}
-    isSearchable={!isMobileDevice()} 
-    onChange={(selectedOption) =>
-      handleSelectChange("escolaridad", selectedOption)
-    }
-    value={escolaridadOptions.find(
-      (option) => option.value === formData.escolaridad
-    )}
-    placeholder="Seleccione una dependencia"
-                className={`form-control ${
-                  validationErrors.includes("dependencia") ? "is-invalid" : ""
-                }`}
-  />
+  id="escolaridad"
+  name="escolaridad"
+  options={escolaridadOptions}
+  isSearchable={!isMobileDevice()} 
+  onChange={(selectedOption) =>
+    handleSelectChange("escolaridad", selectedOption)
+  }
+  value={escolaridadOptions.find(
+    (option) => option.value === formData.escolaridad
+  )}
+  placeholder="Escolaridad"
+  classNamePrefix="custom-select"
+  className={`${
+    validationErrors.includes("escolaridad")
+      ? "custom-select__control--is-invalid"
+      : ""
+  }`}
+/>
         </div>
       </div>
 
@@ -461,7 +473,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
             value={formData.telefono}
             onChange={handleChange}
             className="form-control"
-            placeholder="Ingresa tu número de teléfono"
+            placeholder="Ingresa tu teléfono"
           />
         </div>
       </div>

@@ -6,14 +6,29 @@
   overflow: visible; 
   padding-top: 100px;
 }
+
+@font-face {
+  font-family: 'NovecentoWideBold';
+  src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NovecentoMediumm';
+  src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .topic-page {
   overflow: visible; 
 }
 
 
 .topic-title {
+  font-family: 'NovecentoWideBold', sans-serif;
   font-size: 24px;
-  font-weight: bold;
   color: #AE1922;
   margin-top: 60px; 
   margin-bottom: 10px;
@@ -21,6 +36,7 @@
 }
 
 .topic-subtitle {
+  font-family: 'NovecentoMediumm';
   font-size: 16px;
   color: #000;
   margin-bottom: 20px;
