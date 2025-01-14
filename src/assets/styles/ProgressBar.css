@@ -4,8 +4,30 @@
     margin: 0 auto;
     text-align: center;
   }
+
+  @font-face {
+    font-family: 'NovecentoWideBold';
+    src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NovecentoWideBook';
+    src: url('../fonts/Novecento-WideBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NovecentoMediumm';
+    src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
   
   .progress-title {
+    font-family: 'NovecentoWideBold';
     font-size: 1.5rem;
     margin-bottom: 30px; 
     color: #b21f1f; 
@@ -59,6 +81,7 @@
   
   /* Etiqueta del paso */
   .step-label {
+    font-family: 'NovecentoWideBook';
     margin-top: 10px;
     font-size: 0.9rem;
     color: #333;

@@ -21,7 +21,7 @@ const handleRedirect = () => {
 
                     <div className="home-button-container">
                         <button className="home-button" onClick={handleRedirect}>
-                            Iniciar Denuncia
+                            Iniciar Queja, denuncia y/o peticion
                         </button>
                     </div>
                 </div>
