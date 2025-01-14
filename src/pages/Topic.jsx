@@ -8,8 +8,8 @@ import "../assets/styles/Topic.css";
 function Topic() {
   const navigate = useNavigate();
 
-  const handleCardClick = (id) => {
-    navigate("/descripcion");
+  const handleCardClick = (delito) => {
+    navigate("/descripcion", { state: { temaSeleccionado: delito.title } });
   };
 
   return (

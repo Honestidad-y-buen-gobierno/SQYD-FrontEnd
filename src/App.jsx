@@ -1,12 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Denuncia from "./pages/Denuncia";
 import Topic from "./pages/Topic";
 import Home from "./pages/Home";
-import ViewForm from "./pages/ViewForm"; 
+import ViewForm from "./pages/ViewForm";
 import Seguimiento from "./pages/Seguimiento";
 import Descripcion from "./pages/FormNavigator";
 import Login from "./pages/Login";
+import Summary from "./pages/Summary"; // Importar la nueva vista
 
 function App() {
   return (
@@ -14,20 +15,14 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          {/* Ruta para la página Home */}
           <Route path="/" element={<Home />} />
-          {/* Ruta para la página Denuncia */}
           <Route path="/denuncia" element={<Denuncia />} />
-          {/* Ruta para la página Topic */}
           <Route path="/topic" element={<Topic />} />
-          {/* Nueva ruta para la vista del formulario */}
           <Route path="/form" element={<ViewForm />} />
-          {/* Ruta para la página Seguimiento */}
-          <Route path="/seguimiento" element={<Seguimiento/>} />
-          {/* Ruta para la página Descripcion */}
+          <Route path="/seguimiento" element={<Seguimiento />} />
           <Route path="/descripcion" element={<Descripcion />} />
-          {/* Ruta para la página Login */}
           <Route path="/login" element={<Login />} />
+          <Route path="/summary" element={<Summary />} /> {/* Nueva ruta */}
         </Routes>
       </div>
     </Router>
@@ -35,3 +30,4 @@ function App() {
 }
 
 export default App;
+  

@@ -1,0 +1,45 @@
+/* Asegura que el contenido del contenedor esté debajo del header */
+.summary-container {
+    position: relative; /* Asegura que los elementos se posicionen dentro del contenedor */
+    margin-top: 150px; /* Ajusta este valor a la altura exacta de tu header */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye padding y borde en las dimensiones totales */
+    max-width: 900px; /* Opcional: Ajusta el ancho máximo del resumen */
+    margin-left: auto; /* Centrar en la pantalla horizontalmente */
+    margin-right: auto; /* Centrar en la pantalla horizontalmente */
+    background-color: #fff; /* Fondo blanco para claridad */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilo del título principal */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00796b; /* Color destacado */
+    text-align: center; /* Centrar el título */
+  }
+  
+  /* Estilo de las secciones */
+  .summary-section {
+    margin-bottom: 20px; /* Espaciado entre secciones */
+  }
+  
+  .summary-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .summary-section p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+    line-height: 1.5; /* Mejor legibilidad */
+  }
+  
+  /* Oculta el scroll global */
+  body {
+    overflow-x: hidden; /* Evita scroll horizontal */
+  }
+  

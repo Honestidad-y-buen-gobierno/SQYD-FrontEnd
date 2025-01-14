@@ -11,6 +11,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
   const [formData, setFormData] = useState({
     fecha: "",
     dependencia: "",
+    dependenciaHechos: "", 
     tramite: "",
     municipio: "",
     descripcion: "",
@@ -63,8 +64,14 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
     });
   };
 
-  const handleAnonimoChange = () => setIsAnonimo(!isAnonimo);
-
+  const handleAnonimoChange = () => {
+    const newValue = !isAnonimo;
+    setIsAnonimo(newValue);
+    setFormData({
+      ...formData,
+      isAnonimo: newValue, 
+    });
+  };
   const handleDenuncianteChange = (e) => {
     const value = e.target.value;
     setDenunciante(value);
@@ -83,7 +90,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
 
   const validateStep = () => {
     const requiredFields = {
-      1: ["fecha", "dependencia", "municipio"],
+      1: ["fecha", "dependenciaHechos", "municipio"],
       2: ["descripcion"],
       3: isAnonimo
         ? ["email"]
@@ -147,26 +154,27 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
   />
 </div>
 
-            <div className="form-group">
-              <label htmlFor="dependencia">Dependencia de los hechos</label>
-              <Select
-                options={dependenciasOptions}
-                isSearchable={!isMobileDevice()} 
-                onChange={(selectedOption) =>
-                  handleSelectChange("dependencia", selectedOption)
-                }
-                value={dependenciasOptions.find(
-                  (option) => option.value === formData.dependencia
-                )}
-                placeholder="Seleccione una dependencia"
-                classNamePrefix="custom-select"
-                className={`${
-                  validationErrors.includes("dependencia")
-                    ? "custom-select__control--is-invalid"
-                    : ""
-                }`}
-              />
-            </div>
+<div className="form-group">
+  <label htmlFor="dependenciaHechos">Dependencia de los hechos</label>
+  <Select
+    options={dependenciasOptions}
+    isSearchable={!isMobileDevice()}
+    onChange={(selectedOption) =>
+      handleSelectChange("dependenciaHechos", selectedOption)
+    }
+    value={dependenciasOptions.find(
+      (option) => option.value === formData.dependenciaHechos
+    )}
+    placeholder="Seleccione una dependencia"
+    classNamePrefix="custom-select"
+    className={`${
+      validationErrors.includes("dependenciaHechos")
+        ? "custom-select__control--is-invalid"
+        : ""
+    }`}
+  />
+</div>
+
            {/*<div className="form-group">
               <label htmlFor="tramite">Trámite o servicio (opcional)</label>
               <input
