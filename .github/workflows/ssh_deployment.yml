@@ -1,0 +1,43 @@
+name: SSH Deployment
+
+on:
+  push:
+    branches:
+      - login-view
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Comprobar el código
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Configurar SSH
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        echo "Host $REMOTE_HOST
+              StrictHostKeyChecking no" > ~/.ssh/config
+
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+
+    # Conectarse a la máquina virtual y ejecutar comandos
+    - name: Execute remote commands
+      run: |
+        ssh $REMOTE_USER@$REMOTE_HOST << 'EOF'
+          echo "Conexión SSH establecida con éxito"
+          # Aquí puedes ejecutar los comandos que necesites
+          ls -la
+          uname -a
+        EOF
+
+      env:
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+
