@@ -63,7 +63,7 @@
     grid-template-columns: repeat(4, 140px);
   }
   .topic-title {
-    margin-top: -5px; 
+    margin-top: 25px; 
   }
 }
 
@@ -72,6 +72,6 @@
     grid-template-columns: repeat(2, 140px);
   }
   .topic-title {
-    margin-top: -5px; 
+    margin-top: 35px; 
   }
 }
