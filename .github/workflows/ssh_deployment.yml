@@ -5,6 +5,7 @@ on:
     branches:
       - login-view
 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -32,7 +33,16 @@ jobs:
       run: |
         ssh $REMOTE_USER@$REMOTE_HOST << 'EOF'
           echo "Conexión SSH establecida con éxito"
-          # Aquí puedes ejecutar los comandos que necesites
+          cd /home/jaguar/Appweb/SQYD-FrontEnd/
+          sudo rm -r dist
+          git pull origin main
+          npm run build
+          sudo rm -r /var/www/SistemaAnticorrupcion
+          sudo copy -r dist /var/www/SistemaAnticorrupcion/
+          sudo rm -r /etc/nginx/sites-enabled/SistemaAnticorrupcion
+          sudo ln -s /etc/nginx/sites-available/SistemaAnticorrupcion  /etc/nginx/sites-enabled/
+          sudo systemctl reload nginx
+          
           ls -la
           uname -a
         EOF
