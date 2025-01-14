@@ -7,7 +7,6 @@ function login() {
       <main className="login-content">
         {/* Columna del formulario */}
         <div className="login-form-container">
-          <h1 className="login-title">Inicia sesion</h1>
           <form className="login-form">
             <label htmlFor="folio">Correo electronico*</label>
             <input
@@ -22,7 +21,7 @@ function login() {
               type="text"
               id="password"
               name="password"
-              placeholder="INGRESE SU contraseña"
+              placeholder="INGRESE SU CONTRASEÑA "
               required
             />
             <div className="login-footer">

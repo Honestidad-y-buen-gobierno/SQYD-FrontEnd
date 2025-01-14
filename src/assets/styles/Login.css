@@ -105,6 +105,7 @@
     background-color: #008c76;
     color: #fff;
     padding: 10px 20px;
+    font-family: 'NOvecentoMediumm', sans-serif;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -172,7 +173,7 @@
   
   @media (max-width: 480px) {
     .login-content {
-      padding: 10px;
+      padding: 50px;
     }
   
     .login-title {
@@ -183,6 +184,7 @@
     .login-button {
       padding: 8px 15px;
       font-size: 12px;
+      margin: 25px 25px;
     }
   
     .login-logos img {
