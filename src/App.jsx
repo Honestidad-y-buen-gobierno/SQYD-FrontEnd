@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import ViewForm from "./pages/ViewForm"; 
 import Seguimiento from "./pages/Seguimiento";
 import Descripcion from "./pages/FormNavigator";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
           <Route path="/seguimiento" element={<Seguimiento/>} />
           {/* Ruta para la página Descripcion */}
           <Route path="/descripcion" element={<Descripcion />} />
-
+          {/* Ruta para la página Login */}
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>
