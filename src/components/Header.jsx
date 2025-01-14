@@ -21,6 +21,7 @@ function Header() {
             <li><a href="/">Inicio</a></li>
             <li><a href="/denuncia">Denuncia</a></li>
             <li><a href="/seguimiento">Seguimiento de Denuncia</a></li>
+            <li><a href="/login">Iniciar Sesion</a></li>
           </ul>
         </nav>
       </div>
@@ -29,3 +30,4 @@ function Header() {
 }
 
 export default Header;
+ 

@@ -18,15 +18,6 @@ function Seguimiento() {
               required
             />
 
-            <label htmlFor="clave">CLAVE*</label>
-            <input
-              type="password"
-              id="clave"
-              name="clave"
-              placeholder="INGRESE SU CLAVE DE REGISTRO"
-              required
-            />
-
             <div className="seguimiento-footer">
               <p className="seguimiento-note">*CAMPOS OBLIGATORIOS</p>
               <button type="submit" className="seguimiento-button">
