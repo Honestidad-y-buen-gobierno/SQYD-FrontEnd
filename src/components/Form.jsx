@@ -6,7 +6,7 @@ import "../assets/styles/Form.css";
 
 function Form({ currentStep, handleNext, handleBack, onSubmit }) {
   const [isAnonimo, setIsAnonimo] = useState(false);
-  const [denunciante, setDenunciante] = useState("");
+  const [denunciante, setDenunciante] = useState("particular");
   const [requiereProteccion, setRequiereProteccion] = useState(false);
   const [formData, setFormData] = useState({
     fecha: "",

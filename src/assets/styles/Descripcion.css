@@ -71,7 +71,9 @@
     }
   
     .form-content {
-      max-width: 90%; /* Reduce el ancho máximo en pantallas medianas */
+      width: 600px; /* Mantén el ancho fijo en móviles */
+    max-width: 600px; /* Evita que se reduzca en móviles */
+    padding: 15px;
     }
   }
   

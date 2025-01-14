@@ -4,7 +4,7 @@
   align-items: flex-start;
   margin: auto;
   width: 600px; 
-  max-width: 600px; /* Asegura que no se reduzca en dispositivos móviles */
+  max-width: 600px; 
   padding: 30px;
   background-color: #fff;
   border-radius: 15px;
