@@ -1,21 +1,21 @@
 .card {
   position: relative;
-  background-color: #ffffff; /* Blanco elegante */
-  border: 1px solid #dcdcdc; /* Borde gris claro para contraste */
-  border-radius: 12px; /* Esquinas más redondeadas */
+  background-color: #ffffff; 
+  border: 1px solid #dcdcdc; 
+  border-radius: 12px; 
   width: 180px;
   height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   overflow: hidden;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .card-content {
@@ -33,24 +33,25 @@
 }
 
 .card-blur {
-  filter: blur(2px); /* Difumina el contenido */
+  filter: blur(2px); 
 }
 
 .card-icon {
   font-size: 40px;
-  color: #333333; /* Icono en gris oscuro */
+  color: #333333; 
   margin-bottom: 10px;
 }
 
 .card-title {
-  font-size: 14px; /* Tamaño ajustado para texto largo */
+  font-size: 14px; 
   font-weight: bold;
-  color: #444444; /* Gris oscuro para elegancia */
+  color: #444444; 
   text-align: center;
   padding: 0 8px; /* Espacio interno para evitar que el texto toque los bordes */
-  word-wrap: break-word; /* Rompe el texto en palabras si es necesario */
-  white-space: normal; /* Permite que el texto ocupe múltiples líneas */
-  overflow: visible; /* Asegura que todo el contenido sea visible */
+  white-space: normal; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 100%; 
 }
 
 .card-description {
@@ -59,8 +60,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-  color: #000000; /* Texto negro para mayor contraste */
+  background-color: rgba(255, 255, 255, 0.9); 
+  color: #000000; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,9 +69,9 @@
   padding: 10px;
   font-size: 14px;
   text-align: center;
-  word-wrap: break-word; /* Rompe el texto en palabras si es necesario */
-  white-space: normal; /* Permite múltiples líneas de texto */
-  overflow: visible; /* Asegura que todo el texto sea visible */
+  word-wrap: break-word; 
+  white-space: normal; 
+  overflow: visible; 
   z-index: 2;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -93,7 +94,10 @@
   }
 
   .card-title {
-    font-size: 14px;
+    font-size: 13px;
+    display: -webkit-box; /* Soporte para truncado con múltiples líneas */
+    -webkit-line-clamp: 3; /* Máximo número de líneas antes de truncar */
+    -webkit-box-orient: vertical; /* Orientación vertical para el contenedor */
   }
 
   .card-description {
