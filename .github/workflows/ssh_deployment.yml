@@ -38,6 +38,6 @@ jobs:
         EOF
 
       env:
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }} 
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
 
