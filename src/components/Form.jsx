@@ -167,7 +167,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
                 }`}
               />
             </div>
-           <div className="form-group">
+           {/*<div className="form-group">
               <label htmlFor="tramite">Trámite o servicio (opcional)</label>
               <input
                 type="text"
@@ -177,7 +177,7 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
                 onChange={handleChange}
                 className="form-control"
               />
-            </div> 
+            </div> */}
             <div className="form-group">
               <label htmlFor="municipio">Municipio</label>
               <Select
