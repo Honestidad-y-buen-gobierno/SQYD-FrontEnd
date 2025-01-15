@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation , useNavigate} from "react-router-dom";
 import "../assets/styles/Summary.css";
 
 const Summary = () => {
@@ -27,6 +27,14 @@ const Summary = () => {
     navigator.clipboard.writeText(folio);
     alert("Folio copiado al portapapeles");
   };
+
+
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/"); 
+  }
+
 
   return (
     <div className="summary-container">
@@ -78,7 +86,7 @@ const Summary = () => {
         )}
       </div>
       <div className="denuncia-button-container">
-        <button className="denuncia-button">
+        <button className="denuncia-button" onClick={handleRedirect}>
           FINALIZAR
         </button>
       </div>
