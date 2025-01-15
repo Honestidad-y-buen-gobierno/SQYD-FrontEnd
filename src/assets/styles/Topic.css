@@ -91,3 +91,34 @@
     margin-top: 35px; 
   }
 }
+
+
+@media (max-width: 412px) {
+  .topic-container {
+    padding: 15px;
+    padding-top: 80px;
+  }
+
+  .topic-title {
+    font-size: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .topic-subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding-left: 50px;
+  }
+
+  .topic-grid-container {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
