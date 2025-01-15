@@ -25,12 +25,12 @@ function Topic() {
           <div className="topic-grid">
             {delitosData.Delitos.map((delito, index) => (
               <Card
-                key={index}
-                title={delito.title}
-                icon={delito.emoji}
-                description={delito.description}
-                onClick={() => handleCardClick(index)}
-              />
+              key={index}
+              title={delito.title}
+              icon={delito.emoji}
+              description={delito.description}
+              onClick={() => handleCardClick(delito)}
+            />
             ))}
           </div>
         </div>
