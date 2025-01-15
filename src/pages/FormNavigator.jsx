@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importar para navegación
+import { useNavigate, useLocation } from "react-router-dom"; // Importar para navegación
 import ProgressBar from "../components/ProgressBar";
 import Form from "../components/Form"; // Formulario
 import "../assets/styles/Descripcion.css"; // Estilos específicos del componente
@@ -10,7 +10,8 @@ const FormNavigator = () => {
   const [completedSteps, setCompletedSteps] = useState([]); // Pasos completados
   const [formData, setFormData] = useState({}); // Datos del formulario
   const navigate = useNavigate(); // Hook para navegación
-  const { temaSeleccionado } = location.state || {}; // Extrae el tema desde el estado de navegación
+  const location = useLocation();
+  const { temaSeleccionado } = location.state || {};
 
   const handleNext = () => {
     if (currentStep < steps.length) {
@@ -36,9 +37,9 @@ const FormNavigator = () => {
   };
 
   const handleFormSubmit = (data) => {
-    setFormData(data, temaSeleccionado); // Guardar datos del formulario
-    navigate("/summary", { state: { formData: data, temaSeleccionado } }); // Navegar a la vista Summary con los datos
+    navigate("/summary", { state: { formData: { ...data, temaSeleccionado } } });
   };
+  
 
   return (
     <div className="form-navigator">

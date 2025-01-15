@@ -75,16 +75,21 @@ function Form({ currentStep, handleNext, handleBack, onSubmit }) {
   const handleDenuncianteChange = (e) => {
     const value = e.target.value;
     setDenunciante(value);
+    setFormData((prevState) => ({
+      ...prevState,
+      denunciante: value, // Actualiza directamente en formData
+    }));
+  
     if (value !== "servidor_publico") {
       setRequiereProteccion(false);
-      setFormData({
-        ...formData,
+      setFormData((prevState) => ({
+        ...prevState,
         dependencia: "",
         adscripcion: "",
         curp: "",
-      });
+      }));
     }
-  };
+  };  
 
   const handleProteccionChange = () => setRequiereProteccion(!requiereProteccion);
 

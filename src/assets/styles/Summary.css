@@ -1,45 +1,156 @@
-/* Asegura que el contenido del contenedor esté debajo del header */
 .summary-container {
-    position: relative; /* Asegura que los elementos se posicionen dentro del contenedor */
-    margin-top: 150px; /* Ajusta este valor a la altura exacta de tu header */
-    padding: 20px; /* Espaciado interno */
-    box-sizing: border-box; /* Incluye padding y borde en las dimensiones totales */
-    max-width: 900px; /* Opcional: Ajusta el ancho máximo del resumen */
-    margin-left: auto; /* Centrar en la pantalla horizontalmente */
-    margin-right: auto; /* Centrar en la pantalla horizontalmente */
-    background-color: #fff; /* Fondo blanco para claridad */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  position: relative;
+  margin-top: 180px;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.summary-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.denuncia-button-container {
+    display: flex;
+    justify-content: center;
   }
-  
-  /* Estilo del título principal */
+
+  .denuncia-button {
+    font-family: 'NovecentoMedium';
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+
+@font-face {
+  font-family: 'NovecentoWideBold';
+  src: url('../Fonts/Novecento-WideBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../Fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NovecentoMedium';
+  src: url('../Fonts/Novecento-Medium.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+h1 {
+  font-family: 'NovecentoWideBold', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #B22234;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+
+.summary-section {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 15px;
+}
+
+.summary-section:last-child {
+  border-bottom: none; 
+}
+
+.summary-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-family: 'NovecentoMedium', sans-serif;
+  color: #333333;
+  border-left: 4px solid #B22234;
+  padding-left: 10px;
+}
+
+.summary-section p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #555555;
+  line-height: 1.8;
+}
+
+
+.summary-section p strong {
+  font-weight: bold;
+  color: #222222;
+}
+
+.folio-legend {
+  font-size: 0.9rem !important; 
+  color: #b0b0b0 !important; 
+  margin-top: 4px;
+  font-style: italic; 
+  font-weight: normal !important; 
+  max-width: fit-content; 
+  line-height: 1.2; 
+}
+
+
+
+.copy-button {
+  background-color: transparent; 
+  color: #e2e2e2; 
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+  padding: 2px 8px; 
+  cursor: pointer;
+  font-size: 0.7rem; 
+  transition: all 0.2s ease-in-out;
+}
+
+.copy-button:hover {
+  background-color: #f0f0f0; /* Fondo claro al pasar el cursor */
+  border-color: #bbb;
+  color: #333;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .summary-container {
+    padding: 15px;
+    margin-top: 120px;
+  }
+
   h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
-    color: #00796b; /* Color destacado */
-    text-align: center; /* Centrar el título */
   }
-  
-  /* Estilo de las secciones */
-  .summary-section {
-    margin-bottom: 20px; /* Espaciado entre secciones */
-  }
-  
+
   .summary-section h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
   }
-  
+
   .summary-section p {
     font-size: 1rem;
-    margin-bottom: 5px;
-    color: #555;
-    line-height: 1.5; /* Mejor legibilidad */
   }
-  
-  /* Oculta el scroll global */
-  body {
-    overflow-x: hidden; /* Evita scroll horizontal */
-  }
-  
+}
+
+
+body {
+  overflow-x: hidden; 
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #F7F8FA;
+  color: #333333;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
