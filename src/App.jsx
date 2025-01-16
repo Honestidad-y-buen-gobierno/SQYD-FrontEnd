@@ -7,11 +7,13 @@ import ViewForm from "./pages/ViewForm";
 import Seguimiento from "./pages/Seguimiento";
 import Descripcion from "./pages/FormNavigator";
 import Login from "./pages/Login";
-import Summary from "./pages/Summary"; // Importar la nueva vista
+import Summary from "./pages/Summary"; 
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header />
         <Routes>
